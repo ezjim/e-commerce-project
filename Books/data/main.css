@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: lightblue;
+}
+
+h1 {
+    font-family: cursive;
+}
+
+.hidden {
+    display: none;
+}
