@@ -1,22 +1,31 @@
-table,
+Button {
+    color: rgb(255, 255, 255); font-size: 15px; line-height: 15px; padding: 6px; border-radius: 10px; font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%); box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px solid rgb(28, 110, 164); display: inline-block;}
+    .myButton:hover {
+    background: #1C6EA4; }
+    .myButton:active {
+    background: #144E75; }
+
+
+/* 
+
+.order-now-container {
+    text-align: right; */
+/* table,
 .order-now-container {
     width: 100%;
     max-width: 750px;
     margin: auto;
+} */
 }
-
-.order-now-container {
-    text-align: right;
-}
-
+/* 
 .order-now-container button {
     margin-top: 30px;
     height: 50px;
-    width: 200px;
+    width: 1500px;
     font-size: 1.25em;
     background: coral;
     color: white;
-}
+} */ */
 
 table {
     border-collapse: collapse;
@@ -31,7 +40,7 @@ thead {
 table th,
 table td {
     text-align: right;
-    padding: 10px;
+    padding: 15px;
 }
 
 .align-left {
@@ -55,6 +64,6 @@ tbody td {
 }
 
 tfoot {
-    background: #999;
+    background: #666;
     color: white;
 }

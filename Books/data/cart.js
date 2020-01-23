@@ -1,5 +1,5 @@
 const paradiseLost = {
-    name: 'Paradise Lost',
+    title: 'Paradise Lost',
     author: 'Robert Milton',
     yearPublished: '1667',
     category: 'novel',
@@ -10,7 +10,7 @@ const paradiseLost = {
 };
 
 const roadnotTaken = {
-    name: 'Road Not Taken',
+    title: 'Road Not Taken',
     author: 'Robert Frost',
     yearPublished: '1993',
     category: 'novel',
@@ -21,7 +21,7 @@ const roadnotTaken = {
 };
 
 const aplaceonEarth = {
-    name: 'A Place on Earth',
+    title: 'A Place on Earth',
     author: 'Wendell Berry',
     yearPublished: '1966',
     category: 'novel',
@@ -32,7 +32,7 @@ const aplaceonEarth = {
 };
 
 const thegiftofGravity = {
-    name: 'The Gift of Gravity',
+    title: 'The Gift of Gravity',
     author: 'Wendell Berry',
     yearPublished: '2003',
     category: 'Collection of Poems',
@@ -43,7 +43,7 @@ const thegiftofGravity = {
 };
 
 const thebellJar = {
-    name: 'The Bell Jar',
+    title: 'The Bell Jar',
     author: 'Sylvia Plath',
     yearPublished: '1963',
     category: 'Collection of Poems',
@@ -54,7 +54,7 @@ const thebellJar = {
 };
 
 const theColossus = {
-    name: 'The Colossus',
+    title: 'The Colossus',
     author: 'Sylvia Plath',
     yearPublished: '1960',
     category: 'Collection of Poems',
@@ -65,7 +65,7 @@ const theColossus = {
 };
 
 const theUnabridged = {
-    name: 'The Unabridged Journals',
+    title: 'The Unabridged Journals',
     author: 'Sylvia Plath',
     yearPublished: '1982',
     category: 'Collection of Poems',
@@ -76,7 +76,7 @@ const theUnabridged = {
 };
 
 const lastnightonEarth = {
-    name: 'The Last Night of the Earth',
+    title: 'The Last Night of the Earth',
     author: 'Charles Bukowski',
     yearPublished: '2002',
     category: 'Collection of Poems',
@@ -87,7 +87,7 @@ const lastnightonEarth = {
 };
 
 const talesofordinaryMadness = {
-    name: 'Tales of Ordinary Madness',
+    title: 'Tales of Ordinary Madness',
     author: 'Charles Bukowski',
     yearPublished: '1983',
     category: 'Collection of Poems',
