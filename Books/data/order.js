@@ -1,11 +1,17 @@
 const cart = [{
-    id: 'paradiseLost',
+    name: 'paradiseLost',
     quantity: 2,
-    price: 20.00,
+    // price: 20.00,
 }, {
-    id: 'roadnotTaken',
+    name: 'roadnotTaken',
     quantity: 4,
-    price: 15,
+    // price: 15,
+}, {
+    name: 'thebellJar',
+    quantity: 3,
+}, {
+    name: 'theColossus',
+    quantity: 1,
 }
 
 ];

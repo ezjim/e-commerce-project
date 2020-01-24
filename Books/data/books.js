@@ -15,7 +15,7 @@ const roadnotTaken = {
     yearPublished: '1993',
     category: 'novel',
     discription: 'The Road Not Taken, the meaning of the poem is about a person having to choose between two roads. Two roads diverged in a yellow wood, and the speaker is torn between which road is the best choice.',
-    image: './assets/roadnotTaken-fro.jpg',
+    image: '../assets/roadnotTaken-fro.jpg',
     price: 15.00,
 
 };
@@ -92,7 +92,7 @@ const talesofordinaryMadness = {
     yearPublished: '1983',
     category: 'Collection of Poems',
     discription: 'This collection of short stories gives an insight into the dark, dangerous lowlife of Los Angeles that Bukowski inhabited. From prostitutes to classical music, Bukowski ingeniously mixes.',
-    image: './assets/talesofordinayMadness-buk.jpg',
+    image: './talesofordinaryMadness-buk.jpg',
     price: 33.00,
 
 };

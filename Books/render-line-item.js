@@ -1,6 +1,7 @@
-import { toUSD } from '../common/utils.js';
+import { calcLineTotal } from './common/utils.js';
+import { toUSD } from './common/utils.js';
 
-function renderLineItem(lineItem, Book) {
+function renderLineItem(lineItem, book) {
     const tr = document.createElement('tr');
 
     const nameCell = document.createElement('td');
@@ -12,10 +13,17 @@ function renderLineItem(lineItem, Book) {
     quantityCell.textContent = lineItem.quantity;
     tr.appendChild(priceCell);
 
+    const priceCell = document.createElement('td');
+    priceCell.textContent = toUSD(book.price);
+    tr.appendChild(priceCell);
+    
+
     const totalCell = document.createElement('td');
     totalCell.className = 'line-item-total';
-    const total = lineItem.quantity * book.price;
+    const total = calcLineTotal(lineItem.quantity, book.price);
     totalCell.textContent = toUSD(total);
+    tr.appendChild(totalCell);
+
     return tr;
 
 }

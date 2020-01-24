@@ -5,18 +5,15 @@ const findById = (books, id) => {
             return book;
         }
     }
-}
+};
 
-
-const makePrettyCurrency = (number) =>
+const toUSD = (number) =>
     number
         .toLocaleString(
             'en-US', {
                 style: 'currency',
                 currency: 'USD',
             });
-
-
 
 function calcLineTotal(quantity, price) {
     const amount = quantity * price;
@@ -44,6 +41,6 @@ export default findById;
 export {
     calcLineTotal,
     roundCurrency,
-    makePrettyCurrency,
+    toUSD,
     calcOrderTotal
 };

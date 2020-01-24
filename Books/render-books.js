@@ -1,4 +1,5 @@
-import { makePrettyCurrency } from '../common/utils.js';
+import { toUSD } from './common/utils.js';
+import register from '';
 
 
 function renderBooks(books) {
@@ -11,19 +12,23 @@ function renderBooks(books) {
     li.appendChild(h3);
 
     const img = document.createElement('img');
-    img.src = './assets/' + books.image;
+    img.src = '../' + books.image;
     img.alt = books.name + 'image';
     li.appendChild(img);
 
     const p = document.createElement('p');
     p.className = 'price';
-    p.textContent = makePrettyCurrency(books.price);
+    p.textContent = toUSD(books.price);
  
     const button = document.createElement('button');
     button.textContent = 'Add';
     button.value = books.title;
-    p.appendChild(button);
+    button.addEventListener('click', () => {
+        register.orderBooks(books.name);
+        
+    });
 
+    p.appendChild(button);
     li.appendChild(p);
 
     return li;

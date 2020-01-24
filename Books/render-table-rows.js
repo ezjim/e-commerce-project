@@ -1,4 +1,4 @@
-import { makePrettyCurrency } from '../common/utils';
+import { makePrettyCurrency } from './common/utils';
 
 const makeTd = (content) => {
     const tdElement = document.createElement('td');
