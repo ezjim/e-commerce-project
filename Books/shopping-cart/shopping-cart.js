@@ -1,8 +1,8 @@
-import books from './data/quidditch.js.js';
-import { getOrderTotal } from '../src/register.js';
-import renderLineItem from '../src/render-line-item.js';
-import { toUSD } from '../src/format.js';
-import store from './data/store.js.js';
+import books from '../data/books.js';
+import { getOrderTotal } from '../data/register.js';
+import renderLineItem from '../render-line-item.js';
+import { toUSD } from '../common/utils';
+import store from '../data/store.js';
 
 const tbody = document.getElementById('table-body');
 const shoppingCart = store.getShoppingCart();

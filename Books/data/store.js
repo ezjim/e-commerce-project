@@ -1,5 +1,5 @@
-import books from './books';
-import { findProduct } from './register';
+import books from './books.js';
+import { findProduct } from './register.js';
 
 const bookKey = 'books';
 const cartKey = 'shopping-cart';

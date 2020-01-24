@@ -1,7 +1,7 @@
-const findById = (books, id) => {
+const findByName = (books, name) => {
     for (let i = 0; i < books.lenth; i++) {
         const book = books[i];
-        if (book.id === id) {
+        if (book.name === name) {
             return book;
         }
     }
@@ -27,17 +27,17 @@ function roundCurrency(amount) {
 
 function calcOrderTotal(cart, books) {
     let orderTotal = 0;
-
+    
     for (let i = 0; i < cart.length; i++) {
         const lineItem = cart[i];
-        const book = findById(books, lineItem.id);
-        const lineTotal = calcLineTotal(lineItem.quantity, book.price);
+        const book = findByName(books, lineItem.name);
+        const lineTotal = calcLineTotal(book.price, cart[i].quantity);
         orderTotal += lineTotal;
     }
     return roundCurrency(orderTotal);
 }
 
-export default findById;
+export default findByName;
 export {
     calcLineTotal,
     roundCurrency,

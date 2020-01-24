@@ -5,13 +5,13 @@
 
 #books li {
     list-style: none;
-    text-align: center;
-    position: relative;
     background: #aca9a938;
+    position: relative;
     width: 300px;
     height: 200px;
-    margin-bottom: 10px;
     margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: center;
     transition: 300ms ease-in-out;
     /* box-shadow: 3px 3px 3px grey; */
     /* border-radius: 10px; */
@@ -26,21 +26,25 @@
 
 #books img {
     height: 50%;
- 
+    /* width: 50%; */
 }
+/* https://css-tricks.com/centering-list-items-horizontally-slightly-trickier-than-you-might-think/ */
 
 #menu-outer {
     height: 84px;
 }
+/* https://css-tricks.com/centering-list-items-horizontally-slightly-trickier-than-you-might-think/ */
 
 .table {
     display: table;  
     margin: 0 auto;
 }
 
+/* https://css-tricks.com/centering-list-items-horizontally-slightly-trickier-than-you-might-think/ */
+
 ul#books {
     list-style: none;
-	
+	/* min-width: 696px; */
 	}
 	ul#books li {
 		display: inline;
