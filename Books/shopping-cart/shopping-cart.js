@@ -1,21 +1,39 @@
 import books from '../data/books.js';
-import { getOrderTotal } from '../data/register.js';
+import { findById, calcOrderItem } from '../common/utils.js';
 import renderLineItem from '../render-line-item.js';
-import { toUSD } from '../common/utils';
-import store from '../data/store.js';
 
-const tbody = document.getElementById('table-body');
-const shoppingCart = store.getShoppingCart();
+const total = document.getElementById('total');
+const placeOrder = document.getElementById('placeOrder');
+const tBody = document.getElementById('tBody');
 
-for(let i = 0; i < shoppingCart.length; i++) {
-    const lineItem = shoppingCart[i];
-    const cartItem = store.getProduct(lineItem.code);
-    const dom = renderLineItem(lineItem, cartItem);
-    tbody.appendChild(dom);
+
+
+const json = localStorage.getItem('CART');
+let cart;
+if (json) {
+    cart = JSON.parse(json);
+} else {
+    cart = [];
 }
 
-const totalCell = document.getElementById('total-cell');
+cart.forEach(cartItem => {
+    const bookItem = findById(cartItem.id, books);
+    const update = renderLineItem(cartItem, bookItem);
 
-const orderTotal = toUSD(getOrderTotal(shoppingCart, books));
+    tBody.appendChild(update);
+    
+});
 
-totalCell.textContent = orderTotal;
+const orderTotal = calcOrderItem(cart, books);
+total.textContent = orderTotal;
+
+if (cart.length === 0) {
+    placeOrder.disabled = true;
+} else {
+    placeOrder.addEventListener('click', () => {
+        localStorage.removeItem('CART');
+        alert('Order placed:\n' + JSON.stringify(cart, true, 2));
+        window.location = '../';
+    });
+
+}

@@ -1,139 +1,43 @@
-<html lang="en">
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Shopping Cart</title>
-    <link rel="stylesheet" href="../data/main.css">
+    <link rel="stylesheet" href="../main.css">
     <link rel="stylesheet" href="shopping-cart.css">
-
+    
     <body>
-    <head></head>
+        <head>
+        </head>
 
-</header>
-
-<main>
-    <table class="table">
-        <thead>
-            <tr>
-                <th class="text-align-left">Qty</th>
-                <th class="text-align-left">Item</th>
-                <th class="text-align-right">Price</th>
-                <th class="text-align-right">Total</th>
-            </tr>
-        </thead>
-
-        <tbody id="table-body">
-        </tbody>
-
-        <tfoot id="table-footer">
-            <tr>
-                <th></th>
-                <th></th>
-                <th class="text-align-right">Total</th>
-                <th id ="total-cell" class="text-align-right"></th>
-            </tr>
-
-        </tfoot>
-
-    </table>
-</main>    
-    <div>
-    <button type="button" id="myButton">Check Out!</button>
-    </div>
-    <script src="../data/shopping-cart.js" type="module"></script>
-</body>
-</html>
-<!-- 
-//     <tr>
-//         <th>Name</th>
-//         <th width="150"></th>
-//         <th>Price</th>
-//         <th>Quantity</th>
-//         <th width="150"></th> -->
-//         <!-- <th>Total</th> -->
-//     <!-- </tr>
-//     <tr>
-//         <th>Paradise Lost</th>
-//         <td></td>
-//         <td>$20.00</td>
-//         <td>Quantity</td>
-//         <td width="150"></td>
-//     </tr>
-//     <tr>
-//         <th>Road Not Taken</th>
-//         <td></td>
-//         <td>$15.00</td>
-//         <td>Quantity</td>
-//         <td width="150"></td>
-//     </tr>
-//     <tr>
-//         <th>A Place on Earth</th>
-//         <td></td>
-//         <td>$19.00</td>
-//         <td>Quantity</td>
-//         <td width="150"></td>
-//     </tr>
-//     <tr>
-//         <th>The Gift of Gravity</th>
-//         <td></td>
-//         <td>$22.00</td>
-//         <td>Quantity</td>
-//         <td width="150"></td>
-//     </tr>
-//     <tr>
-//         <th>The Bell Jar</th>
-//         <td></td>
-//         <td>$26.00</td>
-//         <td>Quantity</td>
-//         <td width="150"></td>
-//     </tr>
-//     <tr>
-//         <th>The Colossus</th>
-//         <td></td>
-//         <td>$26.00</td>
-//         <td>Quantity</td>
-//         <td width="150"></td>
-//     </tr>
-//     </tr>
-//     </tfoot>
-//     <tr>
-//         <th>The Unabridged Journals</th>
-//         <td></td>
-//         <td>$22.00</td>
-//         <td>Quantity</td>
-//         <td width="150"></td>
-//     </tr>
-//     <tr>
-//         <th>The Last Night of the Earth</th>
-//         <td></td>
-//         <td>$20.00</td>
-//         <td>Quantity</td>
-//         <td width="150"></td>
-//     </tr>
-//     <tr>
-//         <th>Tales of Ordinary Madness</th>
-//         <td></td>
-//         <td>$33.00</td>
-//         <td>Quantity</td>
-//         <td width="150"></td>
-//     </tr>
-//     </tr> -->
-//     <!-- <tfoot>
-//         <tr>
-//             <td></td>
-//             <td></td>
-//             <td width="150"></td>
-//     </tfoot> -->
-// <!-- </table> -->
-// <!-- <table>
-//     <tfoot>
-//         <td>Total </td>
-//         <td width="310"></td>
-//         <td>aa</td>
-//         <td width="10"></td>
-//         <td>aa</td>
-//         <td width="186"></td>
-//     </tfoot> -->
+        <nav class="nav-menu">
+            <a href="../index.html">Home |</a>
+            <a href="../products/products.html">Products |</a>
+            <a href="../shopping-cart/shopping-cart.html">Shopping Cart</a>
+        </nav>
+            <table id='table'>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id='tBody'>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Order Total</th>
+                    <th id='total'>$</th>
+                </tr>
+            </tfoot>
+        
+        </table>
+        <br>
+        <button class='button' id='placeOrder'><a>Place Order</a></button>
+            <script type="module" src="shopping-cart.js"></script>
+        </body>
+        </html>

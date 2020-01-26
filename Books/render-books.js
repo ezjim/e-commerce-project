@@ -1,47 +1,58 @@
-import { toUSD } from './common/utils.js';
-import register from '../Books/data/store.js';
+import { findById } from './common/utils.js';
 
-
-function renderBooks(books) {
+export default function readMoreBooks(book) {
+    
     const li = document.createElement('li');
-    li.className = books.category;
-    li.title = books.description;
+    li.className = book.category;
+    li.title = book.description;
 
     const h3 = document.createElement('h3');
-    h3.textContent = books.name;
+    h3.textContent = book.name;
     li.appendChild(h3);
 
     const img = document.createElement('img');
-    img.src = books.image;
-    img.alt = books.name + 'image';
+    img.src = '../assets/' + book.image;
+    img.alt = book.name + 'image';
     li.appendChild(img);
 
     const p = document.createElement('p');
     p.className = 'price';
-    p.textContent = toUSD(books.price);
-    
-    // const usd = toUSD(books.price);
-    // p.textContent = usd;
-    // const priceTextNode = document.createTextNode(usd);
-    // p.appendChild(priceTextNode);
- 
-    const button = document.createElement('button');
-    button.textContent = 'Add';
-    button.value = books.name;
-    console.log(books.name);
-    button.addEventListener('click', () => {
-        register.orderProduct(books.name);
-        console.log('doesitwork');
-        
+    const ItemPrice = '$' + book.price.toFixed(2);    
+    p.textContent = ItemPrice;
+
+    const addButton = document.createElement('button');
+    addButton.textContent = 'Add';
+    addButton.value = book.id;
+    addButton.addEventListener('click', () => {
+
+        let json = localStorage.getItem('CART');
+        let cart;
+        if (json) {
+            cart = JSON.parse(json);
+        } else {
+            cart = [];
+        }
+
+        let cartItem = findById(book.id, cart);
+
+        if (!cartItem) {
+            cartItem = {
+                id: book.id,
+                quantity: 1
+            };
+
+            cart.push(cartItem);
+        } else {
+            cartItem.quantity++;
+        }
+
+        json = JSON.stringify(cart);
+        localStorage.setItem('CART', json);
     });
-    p.appendChild(button);
+
+    p.appendChild(addButton);
 
     li.appendChild(p);
-    
-    
+
     return li;
-
-
 }
-
-export default renderBooks;

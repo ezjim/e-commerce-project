@@ -1,46 +1,33 @@
-const findByName = (books, name) => {
-    for (let i = 0; i < books.lenth; i++) {
-        const book = books[i];
-        if (book.name === name) {
-            return book;
-        }
-    }
-};
+// this function takes quanity and amount and returns a total
 
-const toUSD = (number) =>
-    number
-        .toLocaleString(
-            'en-US', {
-                style: 'currency',
-                currency: 'USD',
-            });
-
-function calcLineTotal(quantity, price) {
+export function calcLineItem(quantity, price) {
     const amount = quantity * price;
-    console.log(amount);
-    return roundCurrency(amount);
-}
-
-function roundCurrency(amount) {
     return Math.round(amount * 100) / 100;
 }
 
-function calcOrderTotal(cart, books) {
-    let orderTotal = 0;
-    
-    for (let i = 0; i < cart.length; i++) {
-        const lineItem = cart[i];
-        const book = findByName(books, lineItem.name);
-        const lineTotal = calcLineTotal(book.price, cart[i].quantity);
-        orderTotal += lineTotal;
-    }
-    return roundCurrency(orderTotal);
+// this function takes an array and an id and returns the first ...
+// found item that has an .id property that matches the passed in id.
+// Will return null if no match is found
+
+export function findById(id, array) {
+    let result = null;
+
+    array.forEach(arrayItem => {
+        if (id === arrayItem.id) {
+            result = arrayItem; } 
+    });
+    return result;
 }
 
-export default findByName;
-export {
-    calcLineTotal,
-    roundCurrency,
-    toUSD,
-    calcOrderTotal
-};
+// This function takes the cart array and products array.
+// Calculate the total of your cart data as the expected value.
+export function calcOrderItem(cart, catAccessories) {
+    let orderTotal = 0;
+
+    cart.forEach(cartItem => {
+        const catItem = findById(cartItem.id, catAccessories);
+        const cartItemTotal = calcLineItem(cartItem.quantity, catItem.price);
+        orderTotal += cartItemTotal;
+    });
+    return '$ ' + orderTotal.toFixed(2);
+}

@@ -1,31 +1,29 @@
-import { calcLineTotal } from './common/utils.js';
-import { toUSD } from './common/utils.js';
+// This function takes both cart line item, and 
+// the corresponding product, and returens DOM that 
+// matches static your static HTML
+import { calcLineItem } from './common/utils.js';
 
-function renderLineItem(lineItem, book) {
+function renderLineItem(cartItem, book) {
     const tr = document.createElement('tr');
 
-    const nameCell = document.createElement('td');
-    nameCell.className = 'align-left';
-    nameCell.textContent = book.name;
-    tr.appendChild(quantityCell);
+    const tdName = document.createElement('td');
+    tdName.textContent = book.name;
+    tr.appendChild(tdName);
 
-    const quantityCell = document.createElement('td');
-    quantityCell.textContent = lineItem.quantity;
-    tr.appendChild(priceCell);
+    const tdQuantity = document.createElement('td');
+    tdQuantity.textContent = cartItem.quantity;
+    tr.appendChild(tdQuantity); 
 
-    const priceCell = document.createElement('td');
-    priceCell.textContent = toUSD(book.price);
-    tr.appendChild(priceCell);
-    
+    const tdPrice = document.createElement('td');
+    tdPrice.textContent = cartItem.price;
+    tr.appendChild(tdPrice);
 
-    const totalCell = document.createElement('td');
-    totalCell.className = 'line-item-total';
-    const total = calcLineTotal(lineItem.quantity, book.price);
-    totalCell.textContent = toUSD(total);
-    tr.appendChild(totalCell);
+    const tdTotal = document.createElement('td');
+    const total = calcLineItem(cartItem.quantity, book.price);
+    tdTotal.textContent = total;
+    tr.appendChild(tdTotal);
 
     return tr;
-
 }
 
 export default renderLineItem;
